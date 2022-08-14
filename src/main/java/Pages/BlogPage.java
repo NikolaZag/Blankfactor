@@ -1,7 +1,6 @@
 package Pages;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,13 +12,13 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BlogPage extends BaseClass {
+public class BlogPage extends BasePage {
     WebDriver driver;
 
     Faker faker = new Faker();
 
     public BlogPage() {
-        this.driver = BaseClass.driver;
+        this.driver = BasePage.driver;
         PageFactory.initElements(this.driver, this);
     }
 

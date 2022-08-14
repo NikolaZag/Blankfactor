@@ -7,11 +7,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BlankFactorHomePage extends BaseClass {
+public class BlankFactorHomePage extends BasePage {
 
     WebDriver driver;
     public BlankFactorHomePage() {
-        this.driver = BaseClass.driver;
+        this.driver = BasePage.driver;
         PageFactory.initElements(this.driver, this);
     }
 

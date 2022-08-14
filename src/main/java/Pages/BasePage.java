@@ -3,14 +3,13 @@ package Pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BaseClass {
+public class BasePage {
 
     protected static WebDriver driver;
     JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -63,7 +62,7 @@ public class BaseClass {
 
 
     public void tearDown() {
-        BaseClass.driver.quit();
+        BasePage.driver.quit();
     }
 
 
