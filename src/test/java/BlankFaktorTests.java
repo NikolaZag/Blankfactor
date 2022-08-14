@@ -21,8 +21,9 @@ public void startBrowser() {
 
 
 }
+// Navigate to Article Test
     @Test
-    public void checkBlankFaktorPage() throws InterruptedException {
+    public void navigateToArticlePage() throws InterruptedException {
         blankFactorHomePage = new BlankFactorHomePage();
         blogPage = new BlogPage();
         blankFactorHomePage.openHomePage();
@@ -34,6 +35,20 @@ public void startBrowser() {
         blogPage.navigateToArticle();
 
 
+
+    }
+// subscribe to newsletter test
+    @Test
+    public void subscribeToNewsletter(){
+        blankFactorHomePage = new BlankFactorHomePage();
+        blogPage = new BlogPage();
+        blankFactorHomePage.openHomePage();
+        blankFactorHomePage.acceptCookies();
+        blankFactorHomePage.mouseOver();
+        blankFactorHomePage.clickBlogButton();
+        blogPage.checkBlogPage();
+        blogPage.fillInEmail();
+        blogPage.clickSubmitButton();
 
     }
 
