@@ -47,7 +47,6 @@ blogButton.isDisplayed();
 
 
     public void openHomePage(){
-        driver.get(get("homepage_url"));
         Assertions.assertEquals(driver.getTitle(), get("home_page_title"));
         Assertions.assertEquals(driver.getCurrentUrl(), get("homepage_url"));
     }

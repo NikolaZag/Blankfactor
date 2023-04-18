@@ -17,27 +17,24 @@ public class BasePage {
     private Properties properties = new Properties();
 
     // This method is used to load the properties file
-    private void loadPropertiesFile(String FilePath) {
+    private void loadPropertiesFile() {
         try {
-                FileInputStream Locator = new FileInputStream(FilePath);
+                FileInputStream Locator = new FileInputStream("src/main/resources/config.properties");
                 properties = new Properties();
                 properties.load(Locator);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-        }
+    }
 
 
 
 
 
     public String get(String key) {
-        loadPropertiesFile("src/main/resources/config.properties");
-        String data = properties.getProperty(key);
-        return data;
+        loadPropertiesFile();
+        return properties.getProperty(key);
 
     }
 
@@ -53,6 +50,7 @@ public class BasePage {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+        driver.get(get("homepage_url"));
 
 
 
